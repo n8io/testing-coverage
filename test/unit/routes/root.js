@@ -1,11 +1,10 @@
 var expect = require('chai').expect;
 
 var rootHandler = require('../../../app/routes/root/root');
-var spec = function(){};
 
-spec.get = get;
-
-module.exports = spec;
+module.exports = {
+  get: get
+}
 
 function get(done) {
   var req;

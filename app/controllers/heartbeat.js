@@ -1,8 +1,6 @@
-var heartbeatController = function(){};
-
-heartbeatController.get = get;
-
-module.exports = heartbeatController;
+module.exports = {
+  get: get
+};
 
 function get() {
   return { message: 'OK' };

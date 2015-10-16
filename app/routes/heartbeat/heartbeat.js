@@ -1,10 +1,8 @@
 var heartbeatController = require('../../controllers/heartbeat');
 
-var heartbeatHandler = function(){};
-
-heartbeatHandler.get = get;
-
-module.exports = heartbeatHandler;
+module.exports = {
+  get: get
+};
 
 function get(req, res) {
   var data = heartbeatController.get();

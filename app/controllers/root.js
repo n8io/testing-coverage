@@ -1,8 +1,6 @@
-var rootController = function(){};
-
-rootController.get = get;
-
-module.exports = rootController;
+module.exports = {
+  get: get
+};
 
 function get() {
   return { message: 'OK' };

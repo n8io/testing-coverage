@@ -1,10 +1,8 @@
 var rootController = require('../../controllers/root');
 
-var rootHandler = function(){};
-
-rootHandler.get = get;
-
-module.exports = rootHandler;
+module.exports = {
+  get: get
+};
 
 function get(req, res) {
   var data = rootController.get();

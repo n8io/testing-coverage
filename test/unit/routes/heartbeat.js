@@ -1,11 +1,10 @@
 var expect = require('chai').expect;
 
 var heartbeatHandler = require('../../../app/routes/heartbeat/heartbeat');
-var spec = function(){};
 
-spec.get = get;
-
-module.exports = spec;
+module.exports = {
+  get: get
+}
 
 function get(done) {
   var req;

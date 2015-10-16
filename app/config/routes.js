@@ -7,4 +7,10 @@ var routes = [
   { '/heartbeat': path.join(__dirname, routesRelativePath, 'heartbeat') }
 ];
 
-module.exports = routes;
+module.exports = {
+  get: get
+};
+
+function get(){
+  return routes;
+}

@@ -1,11 +1,10 @@
 var expect = require('chai').expect;
 
 var controller = require('../../../app/controllers/heartbeat');
-var spec = function(){};
 
-spec.get = get;
-
-module.exports = spec;
+module.exports = {
+  get: get
+};
 
 function get(done) {
   var data = controller.get();
