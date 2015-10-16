@@ -10,7 +10,8 @@
     "start": "node $npm_package_main",
     "test": "mocha test/test.spec.js",
     "test-unit": "mocha test/unit/unit.spec.js",
-    "test-integration": "mocha test/integration/integration.spec.js"
+    "test-integration": "mocha test/integration/integration.spec.js",
+    "coverage": "istanbul --include-all-sources cover _mocha -- -R spec --recursive test"
   },
   "author": "Nate Clark <n8@n8io.com>",
   "license": "MIT",
@@ -24,6 +25,7 @@
     "chai": "^3.3.0",
     "istanbul": "^0.3.22",
     "mocha": "^2.3.3",
+    "mocha-istanbul": "^0.2.0",
     "sinon": "^1.17.1",
     "supertest": "^1.1.0"
   }
