@@ -1,0 +1,30 @@
+{
+  "name": "unit-test",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": ">=4.2.1"
+  },
+  "main": "app/app.js",
+  "scripts": {
+    "start": "node $npm_package_main",
+    "test": "mocha test/test.spec.js",
+    "test-unit": "mocha test/unit/unit.spec.js",
+    "test-integration": "mocha test/integration/integration.spec.js"
+  },
+  "author": "Nate Clark <n8@n8io.com>",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^1.4.2",
+    "express": "^4.13.3",
+    "lodash": "^3.10.1",
+    "morgan": "^1.6.1"
+  },
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "istanbul": "^0.3.22",
+    "mocha": "^2.3.3",
+    "sinon": "^1.17.1",
+    "supertest": "^1.1.0"
+  }
+}
