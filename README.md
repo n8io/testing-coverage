@@ -18,6 +18,8 @@ A test repo that demonstrates testing and code coverage.
 4. `npm run test-prod` # Runs all tests, coverage anyalysis, and uploads results to Code Climate
 5. `npm run clean` # Removes node_modules and other temporary items so you can start the project fresh
 
+For the above test commands it is more readable if you turn off logging with environment variables `BUNYAN_LOGLEVEL=OFF EXPRESS_LOG_FORMAT=OFF` when running them.
+
 ## OK, anything else neat about this?
 1. Express logging with Morgan
   1. `EXPRESS_LOG_FORMAT` # defaults to "tiny", set to "OFF" to disable
