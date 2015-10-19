@@ -20,15 +20,18 @@ cfg.env(envSettings.env);
 if(fs.existsSync(packageJson)) {
   cfg.set('pkgJson', JSON.parse(fs.readFileSync(packageJson, 'utf-8')));
 
+  /* istanbul ignore if  */
   if(!cfg.get('npm_package_version')) {
     cfg.set('npm_package_version', cfg.get('pkgJson:version'));
   }
 
+  /* istanbul ignore if  */
   if(!cfg.get('npm_package_name')) {
     cfg.set('npm_package_name', cfg.get('pkgJson:name'));
   }
 }
 
+/* istanbul ignore if  */
 if(fs.existsSync(commitFile)) {
   cfg.set('git', JSON.parse(fs.readFileSync(commitFile, 'utf-8')));
 }

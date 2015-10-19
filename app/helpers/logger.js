@@ -5,6 +5,7 @@ var config = require('../config/config');
 module.exports = function() {
   var streams = [];
 
+  /* istanbul ignore if  */
   if(config.get('BUNYAN_LOGLEVEL') !== 'OFF') {
     streams.push({
       stream: process.stdout,
@@ -12,6 +13,7 @@ module.exports = function() {
     });
   }
 
+  /* istanbul ignore if  */
   if(config.get('LOGGLY_TOKEN') && config.get('LOGGLY_SUBDOMAIN')) {
     streams.push({
       type: 'raw',
