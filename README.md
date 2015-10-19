@@ -18,13 +18,11 @@ A test repo that demonstrates testing and code coverage.
 4. `npm run test-prod` # Runs all tests, coverage anyalysis, and uploads results to Code Climate
 5. `npm run clean` # Removes node_modules and other temporary items so you can start the project fresh
 
-For the above test commands it is more readable if you turn off logging with environment variables `BUNYAN_LOGLEVEL=OFF EXPRESS_LOG_FORMAT=OFF` when running them.
-
 ## OK, anything else neat about this?
 1. Express logging with Morgan
-  1. `EXPRESS_LOG_FORMAT` # defaults to "tiny", set to "OFF" to disable
+  1. `EXPRESS_LOG_FORMAT` # defaults to "OFF", set to "dev" or any Morgan log level
 1. Bunyan logging is built in
-  1. `BUNYAN_LOGLEVEL` # defaults to "error", et to "OFF" to disable
+  1. `BUNYAN_LOGLEVEL` # defaults to "OFF", set to "debug" or any valid Bunyan log level
 2. Loggly support if you supply the creds in the env variables
   1. `LOGGLY_LOGLEVEL` # No default
   2. `LOGGLY_SUBDOMAIN` # No default

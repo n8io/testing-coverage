@@ -7,12 +7,12 @@
   },
   "main": "app/app.js",
   "test": {
-    "reporter": "nyan"
+    "reporter": "spec"
   },
   "scripts": {
     "start": "node $npm_package_main",
     "test": "npm run test-dev",
-    "dev": "npm run start | bunyan",
+    "dev": "BUNYAN_LOGLEVEL=debug EXPRESS_LOG_FORMAT=dev npm run start | bunyan",
     "test-dev": "mocha -R $npm_package_test_reporter test/test.spec.js",
     "test-prod": "npm run coverage && npm run code-climate",
     "test-unit": "mocha -R $npm_package_test_reporter test/unit/unit.spec.js",

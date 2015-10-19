@@ -6,8 +6,8 @@ module.exports = [
   {'PORT': 4103}, // The port in which the app runs
   {'HOST': '0.0.0.0'}, // The ip or hostname that the app listens on
   'NODE_ENV',
-  {'EXPRESS_LOG_FORMAT': 'tiny'} , // The Express logging format
-  {'BUNYAN_LOGLEVEL': 'error'}, // Default bunyan log level
+  {'EXPRESS_LOG_FORMAT': 'OFF'} , // The Express logging format
+  {'BUNYAN_LOGLEVEL': 'OFF'}, // Default bunyan log level
   {'LOGGLY_LOGLEVEL': 'error'}, // Loggly log level: defaults to errors only
   'LOGGLY_SUBDOMAIN', // Loggly subdomain
   'LOGGLY_TOKEN', // Loggly token,

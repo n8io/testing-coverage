@@ -4,19 +4,10 @@ var _ = require('lodash');
 var cfg = require('nconf');
 
 var envKeys = require(path.join(__dirname, '../.environment'));
+var envNormalizer = require(path.join(__dirname, '../helpers/environmentNormalizer'));
 var commitFile = path.join(__dirname, '../../.git.json');
 var packageJson = path.join(__dirname, '../../package.json');
 
-var validEnvironments = {
-  loc: 'local',
-  local: 'local',
-  ci: 'dev',
-  dev: 'dev',
-  development: 'dev',
-  qa: 'qa',
-  prod: 'prod',
-  production: 'prod'
-};
 
 var envSettings = parseEnvironmentVars(envKeys);
 
@@ -42,7 +33,7 @@ if(fs.existsSync(commitFile)) {
   cfg.set('git', JSON.parse(fs.readFileSync(commitFile, 'utf-8')));
 }
 
-cfg.set('NODE_ENV', validEnvironments[cfg.get('NODE_ENV')] || validEnvironments.prod);
+cfg.set('NODE_ENV', envNormalizer(process.env.NODE_ENV));
 cfg.set('app:major', cfg.get('npm_package_version').split('.')[0]);
 cfg.set('app:minor', cfg.get('npm_package_version').split('.')[1]);
 cfg.set('app:revision', cfg.get('npm_package_version').split('.')[2]);
