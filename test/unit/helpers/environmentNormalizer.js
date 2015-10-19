@@ -81,7 +81,7 @@ function production(done) {
 }
 
 function caseInsensitive(done) {
-  var env = environmentNormalizer('PRODUCTION');
+  var env = environmentNormalizer('PrODuCtIoN');
 
   expect(env).to.equal('prod');
 

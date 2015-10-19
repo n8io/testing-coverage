@@ -10,7 +10,7 @@ module.exports = function() {
     it("should return qa when passing qa", envNormSpec.qa);
     it("should return prod when passing prod", envNormSpec.prod);
     it("should return prod when passing production", envNormSpec.production);
-    it("should return prod when passing PRODUCTION", envNormSpec.caseInsensitive);
+    it("should return prod when passing PrODuCtIoN", envNormSpec.caseInsensitive);
     it("should return prod when passing NOT_VALID", envNormSpec.notValid);
     it("should return prod when passing empty string", envNormSpec.emptyString);
   });
