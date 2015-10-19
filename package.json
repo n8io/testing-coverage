@@ -14,7 +14,7 @@
     "test": "npm run test-dev",
     "dev": "npm run start | bunyan",
     "test-dev": "mocha -R $npm_package_test_reporter test/test.spec.js",
-    "test-prod": "npm run test && npm run code-climate",
+    "test-prod": "npm run coverage && npm run code-climate",
     "test-unit": "mocha -R $npm_package_test_reporter test/unit/unit.spec.js",
     "test-integration": "mocha -R $npm_package_test_reporter test/integration/integration.spec.js",
     "coverage": "istanbul --include-all-sources cover _mocha -- -R $npm_package_test_reporter test/test.spec.js",
