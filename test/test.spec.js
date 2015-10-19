@@ -3,5 +3,5 @@ describe('Unit tests', function(){
 });
 
 describe('Integration tests', function(){
-  
+  require('./integration/integration.spec');
 })

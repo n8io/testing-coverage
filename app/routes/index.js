@@ -1,7 +1,7 @@
 var async = require('async');
 var _ = require('lodash');
 
-var routesConfig = require('../config/routes');
+var routesConfig = require('../config/routes').get();
 
 module.exports = function(app) {
   async.each(routesConfig, function(route, callback){

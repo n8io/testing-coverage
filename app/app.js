@@ -2,13 +2,17 @@ var express = require('express');
 
 var app = express();
 
-var port = process.env.PORT || 4102;
-var host = process.env.HOST || process.env.IP || '0.0.0.0';
+var config = require('./config/config');
+var logger = require('./helpers/logger')();
+var port = config.get('PORT');
+var host = config.get('HOST');
+var server;
 
+require('./middleware')(app);
 require('./routes')(app);
 
-var server = app.listen(port, host, function() {
-  console.log('App listening on http://%s:%s on Node %s',
+server = app.listen(port, host, function() {
+  logger.info('App listening on http://%s:%s on Node %s',
     server.address().address,
     server.address().port,
     process.version
