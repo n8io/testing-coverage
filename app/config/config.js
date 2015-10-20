@@ -17,29 +17,14 @@ cfg.use('memory');
 
 cfg.env(envSettings.env);
 
-if(fs.existsSync(packageJson)) {
-  cfg.set('pkgJson', JSON.parse(fs.readFileSync(packageJson, 'utf-8')));
-
-  /* istanbul ignore if  */
-  if(!cfg.get('npm_package_version')) {
-    cfg.set('npm_package_version', cfg.get('pkgJson:version'));
-  }
-
-  /* istanbul ignore if  */
-  if(!cfg.get('npm_package_name')) {
-    cfg.set('npm_package_name', cfg.get('pkgJson:name'));
-  }
-}
-
-/* istanbul ignore if  */
-if(fs.existsSync(commitFile)) {
-  cfg.set('git', JSON.parse(fs.readFileSync(commitFile, 'utf-8')));
-}
+cfg.set('pkgJson', JSON.parse(fs.readFileSync(packageJson, 'utf-8')));
+cfg.set('app:version:semver', cfg.get('pkgJson:version'));
+cfg.set('app:name', cfg.get('pkgJson:name'));
 
 cfg.set('NODE_ENV', envNormalizer(process.env.NODE_ENV));
-cfg.set('app:major', cfg.get('npm_package_version').split('.')[0]);
-cfg.set('app:minor', cfg.get('npm_package_version').split('.')[1]);
-cfg.set('app:revision', cfg.get('npm_package_version').split('.')[2]);
+cfg.set('app:version:major', cfg.get('app:version:semver').split('.')[0]);
+cfg.set('app:version:minor', cfg.get('app:version:semver').split('.')[1]);
+cfg.set('app:version:revision', cfg.get('app:version:semver').split('.')[2]);
 
 cfg.defaults(envSettings.defaults);
 

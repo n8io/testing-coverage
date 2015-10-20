@@ -6,9 +6,7 @@ module.exports = function(app) {
   var expressLogFormat = config.get('EXPRESS_LOG_FORMAT');
   var bunyanLogLevel = config.get('BUNYAN_LOGLEVEL');
 
-  /* istanbul ignore if else  */
   if(expressLogFormat !== 'OFF') {
-    /* istanbul ignore if  */
     if(bunyanLogLevel !== 'OFF' && logger.info()) {
       // Use Bunyan logger
       app.use(function(req, res, next){

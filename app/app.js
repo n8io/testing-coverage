@@ -12,7 +12,9 @@ require('./middleware')(app);
 require('./routes')(app);
 
 server = app.listen(port, host, function() {
-  logger.info('App listening on http://%s:%s on Node %s',
+  logger.info('%s:@%s listening on http://%s:%s on Node %s',
+    config.get('app:name'),
+    config.get('app:version.semver'),
     server.address().address,
     server.address().port,
     process.version
