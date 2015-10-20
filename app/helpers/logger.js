@@ -24,7 +24,7 @@ module.exports = function() {
   }
 
   return bunyan.createLogger({
-    name: config.get('npm_package_name'),
+    name: config.get('app:name'),
     streams: streams,
     serializers: bunyan.stdSerializers
   });
